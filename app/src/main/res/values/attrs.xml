@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BuildingView">
+        <attr name="buildingName" format="string"/>
+        <attr name="buildingColor" format="color"/>
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="float"/>
+        <attr name="rotation" format="float"/>
+    </declare-styleable>
+</resources>

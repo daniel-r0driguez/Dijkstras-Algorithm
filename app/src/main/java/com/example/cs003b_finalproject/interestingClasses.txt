@@ -1,0 +1,5 @@
+Radio
+CheckBox
+Progress Bar
+ArrayAdapter - used for fetching data from arrays and pushing them into a ListView
+8:15
