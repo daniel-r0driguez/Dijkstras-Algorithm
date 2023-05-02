@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">CS003B_FinalProject</string>
-    <string name="hello">Hello</string>
-    <string name="bruh">BRUH!</string>
+    <string name="app_name">CS003B_FinalProject : Dijkstras Algorithm</string>
+    <string name="R_Building">R Building</string>
+    <string name="V_Building">V Building</string>
+    <string name="CalculateShortesPath">Calculate Shortest Path</string>
+    <string name="SelectedSource">Selected Source: </string>
+    <string name="SelectedDestination">Selected Destination: </string>
+    <string-array name="entries">
+        <item name="Hello"/>
+    </string-array>
 </resources>

@@ -1,5 +1,7 @@
 package com.example.cs003b_finalproject.utils;// Daniel Rodriguez and Daniel Dosti
 // CS003B : Final Project
+import androidx.annotation.NonNull;
+
 import java.util.HashMap;
 
 /**
@@ -12,7 +14,7 @@ public class Vertex
 {
     private final String _name;
     private final int _ID;
-    private final HashMap<Vertex, Integer> _adjacentVertices;
+    private final HashMap<Vertex, Float> _adjacentVertices;
 
     /**
      * Private default constructor.
@@ -54,7 +56,7 @@ public class Vertex
      * Returns a HashMap containing any adjacent Vertexes
      * @return a HashMap<Vertex, Integer> representing any adjacent Vertexes
      */
-    public HashMap<Vertex, Integer> getAdjacentVertices()
+    public HashMap<Vertex, Float> getAdjacentVertices()
     {
         return this._adjacentVertices;
     }
@@ -64,7 +66,7 @@ public class Vertex
      * @param vertex the Vertex which will be adjacent to the invoking Vertex object (this)
      * @param cost the cost of traversal between the two adjacent Vertexes
      */
-    public void setAdjacent(Vertex vertex, int cost)
+    public void setAdjacent(Vertex vertex, float cost)
     {
         this._adjacentVertices.put(vertex, cost);
     }
@@ -73,6 +75,7 @@ public class Vertex
      * Basic toString() method.
      * @return a String represent the data of the Vertex such as its name and ID
      */
+    @NonNull
     @Override
     public String toString()
     {

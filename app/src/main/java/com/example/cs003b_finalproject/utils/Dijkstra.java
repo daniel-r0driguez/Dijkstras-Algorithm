@@ -17,7 +17,7 @@ import java.util.Collections;
 public class Dijkstra
 {
     private final Graph _graph;
-    private final ArrayList<Integer> _distance;
+    private final ArrayList<Float> _distance;
     private final ArrayList<Boolean> _sptSet;
     private final ArrayList<Integer> _predecessor;
 
@@ -39,9 +39,9 @@ public class Dijkstra
     public Dijkstra(Graph graph, String sourceVertexName)
     {
         this._graph = graph;
-        this._distance = new ArrayList<>(graph.size());
+        this._distance = new ArrayList<>(_graph.size());
         fillDistance();
-        this._sptSet = new ArrayList<>(graph.size());
+        this._sptSet = new ArrayList<>(_graph.size());
         fillSptSet();
         this._predecessor = new ArrayList<>(_graph.size());
         fillPredecessor();
@@ -55,7 +55,7 @@ public class Dijkstra
     {
         for (int i = 0; i < _graph.size(); ++i)
         {
-            this._distance.add(Integer.MAX_VALUE);
+            this._distance.add(Float.MAX_VALUE);
         }
     }
 
@@ -71,7 +71,7 @@ public class Dijkstra
     }
 
     /**
-     * Helper funciton which intializes the _predecessor array
+     * Helper function which initializes the _predecessor array
      * (which holds the minimum vertexes necessary to traverse from the source vertex to the destination vertex)
      */
     private void fillPredecessor()
@@ -93,7 +93,7 @@ public class Dijkstra
         int srcID = this._graph.getVertex(sourceVertexName).getID();
 
         // Set the distance from the source Vertex to itself to 0 (it's already in its location).
-        this._distance.set(srcID, 0);
+        this._distance.set(srcID, 0f);
 
         // From here, we will potentially loop through the all Vertexes of the graph.
         for (int k = 0; k < _graph.size(); ++k)
@@ -115,23 +115,22 @@ public class Dijkstra
             Vertex closeVertex = this._graph.getVertex(closetVertexID);
 
             // Grab the adjacents of the current Vertex object.
-            HashMap<Vertex, Integer> closeVertexAdjacents = closeVertex.getAdjacentVertices();
+            HashMap<Vertex, Float> closeVertexAdjacents = closeVertex.getAdjacentVertices();
 
-            // Here is where we loop through the adjacents of the Vertex object.
-            for (Map.Entry<Vertex, Integer> connection : closeVertexAdjacents.entrySet())
+            // Here is where we loop through the adjacent Vertexes of the closeVertex object.
+            for (Map.Entry<Vertex, Float> connection : closeVertexAdjacents.entrySet())
             {
                 // Get the cost between the current (closest) Vertex object and its current adjacent Vertex.
-                int costBetweenVertexes = closeVertexAdjacents.get(connection.getKey());
-
+                float costBetweenVertexes = closeVertexAdjacents.get(connection.getKey());
                 // Check if the adjacent Vertex has already been visited...
                 // ...(indicating a minimum path cost has already been calculated for it)
                 boolean adjacentVertexVisited = this._sptSet.get(connection.getKey().getID());
 
                 // Get the current cost from the source Vertex to this adjacent Vertex.
-                int currentPathCost = this._distance.get(connection.getKey().getID());
+                float currentPathCost = this._distance.get(connection.getKey().getID());
 
                 // Get the (minimal) potential cost.
-                int potentialPathCost = this._distance.get(closetVertexID) + closeVertexAdjacents.get(connection.getKey());
+                float potentialPathCost = this._distance.get(closetVertexID) + closeVertexAdjacents.get(connection.getKey());
 
                 // Put it all together and check if the adjacent Vertex has a weight greater than 0, has not been visited,
                 // and has a current path cost greater than the (minimal) potential path cost.
@@ -153,7 +152,7 @@ public class Dijkstra
      */
     private int minDistance()
     {
-        int min = Integer.MAX_VALUE;
+        float min = Float.MAX_VALUE;
         int minIndex = -1;
 
         // Loop through the distance array (these are the distances from the source Vertex to other Vertexes).
@@ -177,7 +176,7 @@ public class Dijkstra
      * @return an ArrayList<Integer> which represents the distances from the source Vertex to other Vertexes.
      * Each index of the ArrayList represents the ID of the Vertex in the graph.
      */
-    public ArrayList<Integer> getDistances()
+    public ArrayList<Float> getDistances()
     {
         return this._distance;
     }

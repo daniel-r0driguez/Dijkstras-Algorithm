@@ -13,6 +13,7 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="wrap_content"
         android:layout_height="500dp"
+        android:layout_marginTop="4dp"
         android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -31,7 +32,7 @@
                 android:id="@+id/v_building"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="68dp"
                 android:contentDescription="@string/V_Building"
                 android:onClick="onClick"
                 android:padding="20dp"
@@ -40,7 +41,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.554"
                 app:rotation="90"
                 app:textColor="#FF0000"
                 app:textSize="60" />
@@ -52,7 +52,7 @@
                 android:layout_marginTop="168dp"
                 android:contentDescription="@string/R_Building"
                 android:onClick="onClick"
-                android:padding="20dp"
+                android:padding="10dp"
                 app:buildingColor="#FFF832"
                 app:buildingName="@string/R_Building"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </HorizontalScrollView>
-
 
     <Button
         android:id="@+id/calculateShortestPathBtn"
@@ -82,11 +81,11 @@
         android:id="@+id/selectedSourceTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:text="@string/SelectedSource"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 

@@ -1,5 +1,8 @@
-package com.example.cs003b_finalproject.utils;// Daniel Rodriguez and Daniel Dosti
+package com.example.cs003b_finalproject;// Daniel Rodriguez and Daniel Dosti
 // CS003B : Final Project
+import com.example.cs003b_finalproject.utils.Dijkstra;
+import com.example.cs003b_finalproject.utils.Graph;
+
 import java.util.ArrayList;
 
 public class GraphTester
@@ -41,7 +44,7 @@ public class GraphTester
         Dijkstra d1 = new Dijkstra(g1, sourceVertexName);
 
         // Get the results.
-        ArrayList<Integer> distances = d1.getDistances();
+        ArrayList<Float> distances = d1.getDistances();
 
         // Print out the results
         System.out.println("Shortest Path from \"" + sourceVertexName + "\"\n=========================");

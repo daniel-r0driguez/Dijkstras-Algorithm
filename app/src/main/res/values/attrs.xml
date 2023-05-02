@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Custom attributes for a BuildingView object -->
     <declare-styleable name="BuildingView">
         <attr name="buildingName" format="string"/>
         <attr name="buildingColor" format="color"/>
