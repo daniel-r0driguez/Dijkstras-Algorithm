@@ -4,32 +4,40 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-
+// Every activity is a context
+public class MainActivity extends AppCompatActivity implements View.OnClickListener
+{
+    private BuildingView R_BUILDING;
+    private BuildingView V_BUILDING;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void onClick(View v)
+    {
+        if (v instanceof BuildingView)
+        {
+            Toast.makeText(this, "Building clicked", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public void onRegisterClick(View view)
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
     {
-        EditText firstNameInput = findViewById(R.id.firstNameTextInput);
-        EditText lastNameInput = findViewById(R.id.lastNameTextInput);
-        EditText emailInput = findViewById(R.id.emailTextInput);
+        super.onCreate(savedInstanceState);
+        this.setContentView(R.layout.activity_main);
+        this.R_BUILDING = findViewById(R.id.r_building);
+        this.V_BUILDING = findViewById(R.id.v_building);
+        this.R_BUILDING.setOnClickListener(this::onBuildingClick);
+        this.V_BUILDING.setOnClickListener(this::onBuildingClick);
+    }
 
-        TextView firstNameTxt = findViewById(R.id.firstNameText);
-        TextView lastNameTxt = findViewById(R.id.lastNameText);
-        TextView emailTxt = findViewById(R.id.emailText);
-
-        CharSequence txt = "First Name: " + firstNameInput.getText().toString();
-        firstNameTxt.setText(txt);
-        txt = "Last Name: " + lastNameInput.getText().toString();
-        lastNameTxt.setText(txt);
-        txt = "Email: " + emailInput.getText().toString();
-        emailTxt.setText(txt);
+    protected void onBuildingClick(View v)
+    {
+        if (!(v instanceof BuildingView))
+        {
+            return;
+        }
+        BuildingView buildingView = (BuildingView) v;
+        Toast.makeText(this, "Building " + buildingView.getName(), Toast.LENGTH_SHORT).show();
     }
 }
