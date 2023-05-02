@@ -10,7 +10,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-// Every activity is a context
+/**
+ * Main screen (activity) of the app.
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
     private BuildingView R_BUILDING;
@@ -27,6 +29,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * Runs when the activity is just being started.
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -44,6 +52,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         System.out.println(pcc.getMinPathTo("Construction Area", "L Building"));
     }
 
+    /**
+     * OnClick() method which handles specifically for BuildingView objects.
+     * @param v the View which invoked this method, who is expected to be a BuildingView
+     */
     protected void onBuildingClick(View v)
     {
         if (!(v instanceof BuildingView))

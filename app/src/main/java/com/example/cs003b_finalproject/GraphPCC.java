@@ -8,6 +8,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * This class is follows a singleton pattern since the map of PCC hardly ever changes drastically.
+ * Use the getInstance() method to grab the instance of the class.
+ */
 public class GraphPCC
 {
     private static GraphPCC _instance;
@@ -16,6 +20,11 @@ public class GraphPCC
 
     private Dijkstra _dijkstraObj;
 
+    /**
+     * Allows for the retrieval of the GraphPCC instance.
+     * This prevents from instantiation of the same Graph over an over again.
+     * @return the instance of the GraphPCC
+     */
     public static GraphPCC getInstance()
     {
         if (_instance == null)
@@ -25,6 +34,10 @@ public class GraphPCC
         return _instance;
     }
 
+    /**
+     * Private default constructor. Initializes the the Graph object of the GraphPCC
+     * to reflect the buildings edge weights relative to each other.
+     */
     private GraphPCC()
     {
         this._graph = new Graph(false);
@@ -49,7 +62,9 @@ public class GraphPCC
 
     }
 
-    // TODO fix this!
+    /**
+     * Private helper function which sets up the Graph object.
+     */
     private void setupGraph()
     {
         HashMap<String, ArrayList<Float>> buildingHashMap = this._pcc_coordinates.getBuildingCoordinates();
@@ -91,16 +106,28 @@ public class GraphPCC
         }
     }
 
-    public ArrayList<Integer> getMinPathTo(String srcVertexName, String desVertexName)
+    /**
+     * Calculates the minimum path from one building to the other.
+     * @param srcBuildingName the name of the src building
+     * @param desBuildingName the name of the destination building
+     * @return
+     */
+    public ArrayList<Integer> getMinPathTo(String srcBuildingName, String desBuildingName)
     {
-        this._dijkstraObj = new Dijkstra(this._graph, srcVertexName);
+        this._dijkstraObj = new Dijkstra(this._graph, srcBuildingName);
 //        for (int i = 0; i < this._dijkstraObj.getDistances().size(); ++i)
 //        {
 //            System.out.printf("%s --> %s : minimum cost = %f\n", srcVertexName, this._graph.getVertex(i).getName(), this._dijkstraObj.getDistances().get(i));
 //        }
-        return this._dijkstraObj.getMinPathTo(desVertexName);
+        return this._dijkstraObj.getMinPathTo(desBuildingName);
     }
 
+    /**
+     * Returns an ArrayList<Float> representing the minimum distances necessary to go from the source building
+     * to all other buildings.
+     * Note: getMinPathTo() should be called first since the algorithm requires a source Vertex to function.
+     * @return an ArrayList<Float> with minimum distances from one building to all other buildings
+     */
     public ArrayList<Float> getMinDistances()
     {
         if (this._dijkstraObj != null)
@@ -110,6 +137,10 @@ public class GraphPCC
         return null;
     }
 
+    /**
+     * Returns the String representation of the GraphPCC object.
+     * @return a String representation of GraphPCC
+     */
     @NonNull
     @Override
     public String toString()
