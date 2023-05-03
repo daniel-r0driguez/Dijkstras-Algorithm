@@ -104,6 +104,24 @@ public class PCC_Coordinates
 
         coordinates = setNewCoords(34.14332181597318f, -118.11729864736508f);
         addEntry("A Building", coordinates);
+
+        coordinates = setNewCoords(34.14526422637958f, -118.1208738525485f);
+        addEntry("Lot 1", coordinates);
+
+        coordinates = setNewCoords(34.14542909343063f, -118.11610908721266f);
+        addEntry("Lot 7", coordinates);
+
+        coordinates = setNewCoords(34.14255189843136f, -118.12086035079459f);
+        addEntry("Lot 3", coordinates);
+
+        coordinates = setNewCoords(34.14247274762657f, -118.11985369556062f);
+        addEntry("Lot 4", coordinates);
+
+        coordinates = setNewCoords(34.14343895218104f, -118.1163670658307f);
+        addEntry("Lot 5", coordinates);
+
+        coordinates = setNewCoords(34.14242067177523f, -118.1163668456959f);
+        addEntry("Sci Vil", coordinates);
     }
 
     /**

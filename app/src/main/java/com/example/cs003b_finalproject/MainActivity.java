@@ -7,6 +7,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Main screen (activity) of the app.
  */
@@ -45,15 +47,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.scrollViewList = findViewById(R.id.scrollViewList);
 
         GraphPCC pcc = GraphPCC.getInstance();
-        pcc.getMinPathTo("Construction Area", "C Building");
-        System.out.println(pcc.getMinPathTo("Construction Area", "L Building"));
+        ArrayList<Integer> path = pcc.getMinPathTo("Lot 3", "Shatford Library");
+
     }
 
     /**
      * OnClick() method which handles specifically for BuildingView objects.
      * @param v the View which invoked this method, who is expected to be a BuildingView
      */
-    protected void onBuildingClick(View v)
+    public void onBuildingClick(View v)
     {
         if (!(v instanceof BuildingView))
         {

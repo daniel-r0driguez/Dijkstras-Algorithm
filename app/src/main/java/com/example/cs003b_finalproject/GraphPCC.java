@@ -67,42 +67,418 @@ public class GraphPCC
     private void setupGraph()
     {
         HashMap<String, ArrayList<Float>> buildingHashMap = this._pcc_coordinates.getBuildingCoordinates();
-
         for (String buildingName : buildingHashMap.keySet())
         {
             this._graph.addVertex(buildingName);
         }
 
-        int count = 0;
-        for (Map.Entry<String, ArrayList<Float>> outerSet : buildingHashMap.entrySet())
-        {
-            Vertex curVertex = this._graph.getVertex(outerSet.getKey());
-            for (Map.Entry<String, ArrayList<Float>> innerSet : buildingHashMap.entrySet())
-            {
-                ++count;
-                Vertex otherVertex = this._graph.getVertex(innerSet.getKey());
+        String srcBuildingName = "CC Building";
+        String destinationBuildingName;
 
-                if (count == 23)
-                {
-                    return;
-                }
+        destinationBuildingName = "L Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
 
-                if (!curVertex.equals(otherVertex))
-                {
-                    float lat1 = outerSet.getValue().get(0);
-                    float lon1 = outerSet.getValue().get(1);
-                    float lat2 = innerSet.getValue().get(0);
-                    float lon2 = innerSet.getValue().get(1);
+        destinationBuildingName ="Lot 1";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
 
-                    float distance = (float) this._pcc_coordinates.getDistance(lat1, lat2, lon1, lon2);
+        destinationBuildingName = "Bookstore";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
 
-                    System.out.println(curVertex + " --> " + otherVertex);
-                    System.out.println("Distance: " + distance);
+        destinationBuildingName = "L Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
 
-                    this._graph.addEdge(curVertex.getName(), otherVertex.getName(), distance);
-                }
-            }
-        }
+        destinationBuildingName = "D Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "L Building";
+
+        destinationBuildingName = "CC Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "D Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "G Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Bookstore";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "R Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "C Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "D Building";
+
+        destinationBuildingName = "L Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "C Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "G Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "R Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Bookstore";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "E Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "E Building";
+
+        destinationBuildingName = "Shatford Library";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "C Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Construction Area";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Lot 5";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "Shatford Library";
+
+        destinationBuildingName = "E Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Construction Area";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "C Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "V Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+
+        srcBuildingName = "Lot 7";
+        destinationBuildingName = "Shatford Library";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Construction Area";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "Lot 5";
+
+        destinationBuildingName = "Construction Area";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Sci Vil";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Center for the Arts";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "Lot 4";
+
+        destinationBuildingName = "Lot 3";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "FS Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "FB Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "FC Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "GM Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "Lot 3";
+
+        destinationBuildingName = "FS Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "W Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Bookstore";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "Lot 1";
+
+        destinationBuildingName = "CC Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Bookstore";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "Sci Vil";
+
+        destinationBuildingName = "Lot 5";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "GM Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "A Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "Bookstore";
+        destinationBuildingName = "W Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "CC Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "R Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Z Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "G Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Lot 3";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "G Building";
+
+        destinationBuildingName = "R Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Bookstore";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "CC Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "L Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "D Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "R Building";
+
+        destinationBuildingName = "G Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Z Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Bookstore";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "CC Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "L Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "D Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "C Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "V Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Center for the Arts";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "GM Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "Z Building";
+
+        destinationBuildingName = "R Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Bookstore";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "W Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+
+        srcBuildingName = "C Building";
+
+        destinationBuildingName = "R Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "G Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Construction Area";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "E Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Shatford Library";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "V Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "D Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "CC Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "L Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "Construction Area";
+
+        destinationBuildingName = "Shatford Library";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "C Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Lot 5";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "V Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Center for the Arts";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Lot 7";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "A Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "W Building";
+
+        destinationBuildingName = "Bookstore";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Z Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "FS Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Lot 3";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "V Building";
+
+        destinationBuildingName = "C Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Construction Area";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Center for the Arts";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Z Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Lot 5";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "Center for the Arts";
+
+        destinationBuildingName = "GM Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "A Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Lot 5";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "V Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "FC Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "FS Building";
+
+        destinationBuildingName = "FB Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "W Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Lot 4";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Lot 3";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "FB Building";
+
+        destinationBuildingName = "FS Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "FC Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "FC Building";
+
+        destinationBuildingName = "FB Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "GM Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Center for the Arts";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "GM Building";
+
+        destinationBuildingName = "A Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "FC Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Center for the Arts";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Lot 4";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        srcBuildingName = "A Building";
+
+        destinationBuildingName = "Lot 5";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "GM Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Sci Vil";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Center for the Arts";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "Shatford Library";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+
+        destinationBuildingName = "E Building";
+        this._graph.addEdge(srcBuildingName, destinationBuildingName,calculateDistance(srcBuildingName, destinationBuildingName));
+    }
+
+    public float calculateDistance(String src, String des)
+    {
+        HashMap<String, ArrayList<Float>> buildingHashMap = this._pcc_coordinates.getBuildingCoordinates();
+        ArrayList<Float> srcPos = buildingHashMap.get(src);
+        ArrayList<Float> desPos = buildingHashMap.get(des);
+
+        return (float) this._pcc_coordinates.getDistance(srcPos.get(0), desPos.get(0), srcPos.get(1), desPos.get(1));
     }
 
     /**
@@ -114,10 +490,10 @@ public class GraphPCC
     public ArrayList<Integer> getMinPathTo(String srcBuildingName, String desBuildingName)
     {
         this._dijkstraObj = new Dijkstra(this._graph, srcBuildingName);
-//        for (int i = 0; i < this._dijkstraObj.getDistances().size(); ++i)
-//        {
-//            System.out.printf("%s --> %s : minimum cost = %f\n", srcVertexName, this._graph.getVertex(i).getName(), this._dijkstraObj.getDistances().get(i));
-//        }
+        for (int i : this._dijkstraObj.getMinPathTo(desBuildingName))
+        {
+            System.out.println(this._graph.getVertex(i).getName());
+        }
         return this._dijkstraObj.getMinPathTo(desBuildingName);
     }
 
