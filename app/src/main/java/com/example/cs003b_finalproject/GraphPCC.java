@@ -485,16 +485,26 @@ public class GraphPCC
      * Calculates the minimum path from one building to the other.
      * @param srcBuildingName the name of the src building
      * @param desBuildingName the name of the destination building
-     * @return
+     * @return an ArrayList<Integer> representing the IDs of the buildings to traverse, may return null if
+     * passed in Building names don't exist in the graph.
      */
     public ArrayList<Integer> getMinPathTo(String srcBuildingName, String desBuildingName)
     {
-        this._dijkstraObj = new Dijkstra(this._graph, srcBuildingName);
-        for (int i : this._dijkstraObj.getMinPathTo(desBuildingName))
+        if (this._graph.getVertex(srcBuildingName) == null || this._graph.getVertex(srcBuildingName) == null)
         {
-            System.out.println(this._graph.getVertex(i).getName());
+            return null;
         }
+        this._dijkstraObj = new Dijkstra(this._graph, srcBuildingName);
         return this._dijkstraObj.getMinPathTo(desBuildingName);
+    }
+
+    /**
+     * Returns the Vertexes (Buildings) used by the Graph object.
+     * @return an ArrayList<Vertex> which represents the Buildings inside the Graph.
+     */
+    public ArrayList<Vertex> getVertexes()
+    {
+        return this._graph.getVertexes();
     }
 
     /**

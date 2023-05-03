@@ -3,9 +3,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
+
+import com.example.cs003b_finalproject.utils.Dijkstra;
+import com.example.cs003b_finalproject.utils.Vertex;
 
 import java.util.ArrayList;
 
@@ -14,11 +18,12 @@ import java.util.ArrayList;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
-    private BuildingView R_BUILDING;
-    private BuildingView V_BUILDING;
+    private BuildingView startBuilding;
+    private BuildingView destinationBuilding;
+    private boolean isSelectingBuilding;
+    private Button calculateButton;
+    private ArrayList<Integer> buildingIDs;
 
-    private LinearLayout LIST;
-    private ScrollView scrollViewList;
     @Override
     public void onClick(View v)
     {
@@ -39,29 +44,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
-        this.R_BUILDING = findViewById(R.id.r_building);
-        this.V_BUILDING = findViewById(R.id.v_building);
-        this.R_BUILDING.setOnClickListener(this::onBuildingClick);
-        this.V_BUILDING.setOnClickListener(this::onBuildingClick);
-        this.LIST = findViewById(R.id.buildingListContainer);
-        this.scrollViewList = findViewById(R.id.scrollViewList);
 
-        GraphPCC pcc = GraphPCC.getInstance();
-        ArrayList<Integer> path = pcc.getMinPathTo("Lot 3", "Shatford Library");
+        this.calculateButton = findViewById(R.id.calculateShortestPathBtn);
+        this.calculateButton.setOnClickListener(this::onCalculateBtnClick);
 
+        this.isSelectingBuilding = true;
+        this.startBuilding = null;
+        this.destinationBuilding = null;
     }
 
-    /**
-     * OnClick() method which handles specifically for BuildingView objects.
-     * @param v the View which invoked this method, who is expected to be a BuildingView
-     */
     public void onBuildingClick(View v)
     {
-        if (!(v instanceof BuildingView))
+        if (this.isSelectingBuilding)
         {
-            return;
+            this.startBuilding = (BuildingView) v;
+            this.isSelectingBuilding = false;
         }
-        BuildingView buildingView = (BuildingView) v;
-        Toast.makeText(this, "Building " + buildingView.getName(), Toast.LENGTH_SHORT).show();
+        else
+        {
+            this.destinationBuilding = (BuildingView) v;
+            this.isSelectingBuilding = true;
+        }
+    }
+
+    public void onCalculateBtnClick(View v)
+    {
+        GraphPCC pcc = GraphPCC.getInstance();
+        if (this.startBuilding != null && this.destinationBuilding != null)
+        {
+            this.buildingIDs = pcc.getMinPathTo(this.startBuilding.getName(), this.destinationBuilding.getName());
+        }
+        ArrayList<Vertex> buildings = pcc.getVertexes();
+        for (int i : this.buildingIDs)
+        {
+            System.out.println(buildings.get(i).getName());
+        }
     }
 }
