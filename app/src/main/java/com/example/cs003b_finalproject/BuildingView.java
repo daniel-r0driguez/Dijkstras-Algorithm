@@ -8,7 +8,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.content.Context;
 
-
+/**
+ * BuildingView is a class which simply represents a building (a rectangle with the buildings name).
+ * This class inherits from the android.View class, making it usable in layout files.
+ */
 public class BuildingView extends View
 {
     final private String _buildingName;
@@ -16,11 +19,20 @@ public class BuildingView extends View
     final private Paint _textPaint;
     final private Rect _textBounds;
 
+    /**
+     * Default constructor.
+     * @param context the context (activity) of where this View is in
+     */
     public BuildingView(Context context)
     {
         this(context, null);
     }
 
+    /**
+     * Overloaded constructor.
+     * @param context context the context (activity) of where this View is in
+     * @param attributeSet the set of custom attributes given to the BuildingView in the layout file
+     */
     public BuildingView(Context context, AttributeSet attributeSet)
     {
         super(context, attributeSet);
@@ -54,6 +66,10 @@ public class BuildingView extends View
         setRotation(_rotationAngle);
     }
 
+    /**
+     * Draws the BuildView onto the screen
+     * @param canvas the canvas on which the background will be drawn
+     */
     @Override
     protected void onDraw(Canvas canvas)
     {
@@ -69,6 +85,16 @@ public class BuildingView extends View
         }
     }
 
+    /**
+     * Allows for the content and visual representation of the BuildingView to be remeasured.
+     * @param widthMeasureSpec horizontal space requirements as imposed by the parent.
+     *                         The requirements are encoded with
+     *                         {@link android.view.View.MeasureSpec}.
+     * @param heightMeasureSpec vertical space requirements as imposed by the parent.
+     *                         The requirements are encoded with
+     *                         {@link android.view.View.MeasureSpec}.
+     *
+     */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
@@ -81,6 +107,10 @@ public class BuildingView extends View
         setMeasuredDimension(textWidth + paddingX, textHeight + paddingY);
     }
 
+    /**
+     * Returns the name of the BuildingView.
+     * @return the name of the BuildingView.
+     */
     public String getName()
     {
         return this._buildingName;

@@ -1,6 +1,5 @@
 package com.example.cs003b_finalproject.utils;// Daniel Rodriguez and Daniel Dosti
 // CS003B : Final Project
-import androidx.annotation.NonNull;
 
 import java.util.HashMap;
 
@@ -75,7 +74,6 @@ public class Vertex
      * Basic toString() method.
      * @return a String represent the data of the Vertex such as its name and ID
      */
-    @NonNull
     @Override
     public String toString()
     {

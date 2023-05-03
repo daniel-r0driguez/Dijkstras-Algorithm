@@ -1,8 +1,6 @@
 package com.example.cs003b_finalproject.utils;// Daniel Rodriguez and Daniel Dosti
 // CS003B : Final Project
 
-import androidx.annotation.NonNull;
-
 /**
  * Simple class which holds information of a connection between two Vertexes. For example, it stores the source Vertex (frm)
  * and the destination Vertex (to) with a traversal cost between them.
@@ -63,7 +61,6 @@ public class Edge
      * @return a String representing the data of the Edge object such as the name and ID of both "frm" and "to"...
      * ...as well as the traversal cost between them.
      */
-    @NonNull
     @Override
     public String toString()
     {

@@ -5,12 +5,17 @@ import java.util.HashMap;
 /**
  * Simple class which keeps track of the PCC building's coordinates on the surface of the Earth.
  * This means the coordinates are in latitude and longitude.
+ * This class also follows the singleton pattern.
  */
 public class PCC_Coordinates
 {
     private static PCC_Coordinates _instance;
     private final HashMap<String, ArrayList<Float>> _buildingCoordinates;
 
+    /**
+     * Returns the instance of the PCC_Coordinates object.
+     * @return the sole instance of the PCC_Coordinates
+     */
     public static PCC_Coordinates getInstance()
     {
         if (_instance == null)
@@ -21,6 +26,10 @@ public class PCC_Coordinates
     }
 
 
+    /**
+     * Private default constructor.
+     * Constructs a HashMap which has a building name as its key and its position (in latitude and longitude).
+     */
     private PCC_Coordinates()
     {
         final int BUILDING_COUNT = 23;
@@ -97,6 +106,12 @@ public class PCC_Coordinates
         addEntry("A Building", coordinates);
     }
 
+    /**
+     * Sets an ArrayList<Float> to new coordinates.
+     * @param lat the latitude
+     * @param lon the longitude
+     * @return a new ArrayList<Float> with the position in latitude and longitude
+     */
     private ArrayList<Float> setNewCoords(float lat, float lon)
     {
         ArrayList<Float> temp = new ArrayList<>(2);
@@ -105,11 +120,20 @@ public class PCC_Coordinates
         return temp;
     }
 
+    /**
+     * Adds an entry to the HashMap
+     * @param buildingName the key, which is the name of the building
+     * @param coordinates the value, which is the position of the building (in latitude and longitude)
+     */
     private void addEntry(String buildingName, ArrayList<Float> coordinates)
     {
         this._buildingCoordinates.put(buildingName, coordinates);
     }
 
+    /**
+     * Returns the HashMap containing the coordinates of the buildings.
+     * @return a HashMap<String, ArrayList<Float>> which represents the coordinates of each building.
+     */
     public HashMap<String, ArrayList<Float>> getBuildingCoordinates()
     {
         return this._buildingCoordinates;

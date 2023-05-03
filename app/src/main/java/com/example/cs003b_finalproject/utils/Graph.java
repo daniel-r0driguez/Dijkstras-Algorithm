@@ -1,7 +1,5 @@
 package com.example.cs003b_finalproject.utils;// Daniel Rodriguez and Daniel Dosti
 // CS003B : Final Project
-import androidx.annotation.NonNull;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -155,7 +153,6 @@ public class Graph
      * @return a String representing the data of the Graph such as whether it is directed and its size,
      * The Vertexes and Edges of the Graph are also pushed to the String.
      */
-    @NonNull
     @Override
     public String toString()
     {
