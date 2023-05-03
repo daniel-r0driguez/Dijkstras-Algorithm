@@ -14,9 +14,9 @@
         android:layout_width="wrap_content"
         android:layout_height="500dp"
         android:layout_marginTop="4dp"
-        android:background="@color/gray"
+        android:background="#E5E5E5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -35,29 +35,31 @@
                 android:contentDescription="@string/V_Building"
                 android:onClick="onClick"
                 android:padding="15dp"
-                app:buildingColor="#aFF832"
+                app:buildingColor="#7B7A7D"
                 app:buildingName="V Building"
+                app:layout_constraintBottom_toTopOf="@+id/CA_building"
+                app:layout_constraintEnd_toEndOf="@+id/CA_building"
+                app:layout_constraintStart_toEndOf="@+id/r_building"
+                app:layout_constraintTop_toBottomOf="@+id/c_building"
                 app:rotation="0"
-                app:textColor="#FF0000"
-                app:textSize="60"
-                tools:layout_editor_absoluteX="395dp"
-                tools:layout_editor_absoluteY="195dp" />
+                app:textColor="#000000"
+                app:textSize="60" />
 
             <com.example.cs003b_finalproject.BuildingView
                 android:id="@+id/r_building"
                 android:layout_width="122dp"
                 android:layout_height="58dp"
-                android:layout_marginTop="128dp"
+                android:layout_marginTop="144dp"
                 android:contentDescription="@string/R_Building"
                 android:onClick="onClick"
-                android:padding="10dp"
-                app:buildingColor="#FFF832"
+                android:padding="15dp"
+                app:buildingColor="#7B7A7D"
                 app:buildingName="@string/R_Building"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.288"
+                app:layout_constraintHorizontal_bias="0.227"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:textColor="#FF0000"
+                app:textColor="#000000"
                 app:textSize="45" />
 
             <com.example.cs003b_finalproject.BuildingView
@@ -68,13 +70,13 @@
                 android:contentDescription="@string/C_Building"
                 android:onClick="onClick"
                 android:padding="40dp"
-                app:buildingColor="#FFF832"
+                app:buildingColor="#7B7A7D"
                 app:buildingName="@string/C_Building"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.464"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:textColor="#FF0000"
+                app:textColor="#000000"
                 app:textSize="50" />
 
             <com.example.cs003b_finalproject.BuildingView
@@ -84,31 +86,31 @@
                 android:layout_marginTop="264dp"
                 android:contentDescription="@string/CA"
                 android:onClick="onClick"
-                android:padding="30dp"
-                app:buildingColor="#FFF832"
+                android:padding="35dp"
+                app:buildingColor="#7B7A7D"
                 app:buildingName="@string/CA"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.476"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:textColor="#FF0000"
+                app:textColor="#000000"
                 app:textSize="45" />
 
             <com.example.cs003b_finalproject.BuildingView
                 android:id="@+id/GM_building"
                 android:layout_width="160dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="352dp"
+                android:layout_marginTop="368dp"
                 android:contentDescription="@string/GM_Building"
                 android:onClick="onClick"
-                android:padding="25dp"
-                app:buildingColor="#FFF832"
+                android:padding="30dp"
+                app:buildingColor="#7B7A7D"
                 app:buildingName="@string/GM_Building"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.445"
+                app:layout_constraintHorizontal_bias="0.482"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:textColor="#FF0000"
+                app:textColor="#000000"
                 app:textSize="45" />
 
             <com.example.cs003b_finalproject.BuildingView
@@ -118,14 +120,14 @@
                 android:layout_marginTop="24dp"
                 android:contentDescription="@string/D_Building"
                 android:onClick="onClick"
-                android:padding="20dp"
-                app:buildingColor="#FFF832"
+                android:padding="25dp"
+                app:buildingColor="#7B7A7D"
                 app:buildingName="@string/D_Building"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.324"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:textColor="#FF0000"
+                app:textColor="#000000"
                 app:textSize="15" />
 
             <com.example.cs003b_finalproject.BuildingView
@@ -136,14 +138,14 @@
                 android:contentDescription="@string/E_Building"
                 android:onClick="onClick"
                 android:padding="20dp"
-                app:buildingColor="#FFF832"
+                app:buildingColor="#7B7A7D"
                 app:buildingName="@string/E_Building"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.608"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:textColor="#FF0000"
-                app:textSize="15" />
+                app:textColor="#000000"
+                app:textSize="30" />
 
             <com.example.cs003b_finalproject.BuildingView
                 android:id="@+id/Library_building"
@@ -153,13 +155,13 @@
                 android:contentDescription="@string/Library"
                 android:onClick="onClick"
                 android:padding="20dp"
-                app:buildingColor="#FFF832"
+                app:buildingColor="#7B7A7D"
                 app:buildingName="@string/Library"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.741"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:textColor="#FF0000"
+                app:textColor="#000000"
                 app:textSize="60" />
 
             <com.example.cs003b_finalproject.BuildingView
@@ -170,13 +172,13 @@
                 android:contentDescription="@string/Lot7"
                 android:onClick="onClick"
                 android:padding="35dp"
-                app:buildingColor="#FFF832"
+                app:buildingColor="#FFE800"
                 app:buildingName="@string/Lot7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.906"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:textColor="#FF0000"
+                app:textColor="#000000"
                 app:textSize="60" />
 
             <com.example.cs003b_finalproject.BuildingView
@@ -187,31 +189,235 @@
                 android:contentDescription="@string/Construction_Area"
                 android:onClick="onClick"
                 android:padding="35dp"
-                app:buildingColor="#FFF832"
+                app:buildingColor="#7B7A7D"
                 app:buildingName="@string/Construction_Area"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.891"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:textColor="#FF0000"
+                app:textColor="#000000"
                 app:textSize="60" />
 
             <com.example.cs003b_finalproject.BuildingView
                 android:id="@+id/Lot5_building"
                 android:layout_width="91dp"
                 android:layout_height="65dp"
-                android:layout_marginTop="248dp"
+                android:layout_marginTop="260dp"
                 android:contentDescription="@string/Lot5"
                 android:onClick="onClick"
                 android:padding="40dp"
-                app:buildingColor="#FFF832"
+                app:buildingColor="#FFE800"
                 app:buildingName="@string/Lot5"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.874"
+                app:layout_constraintHorizontal_bias="0.853"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:textColor="#FF0000"
+                app:textColor="#000000"
                 app:textSize="60" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/SV_building"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="372dp"
+                android:contentDescription="@string/SV"
+                android:onClick="onClick"
+                android:padding="37dp"
+                app:buildingColor="#7B7A7D"
+                app:buildingName="@string/SV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.899"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="65" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/A_building"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="356dp"
+                android:contentDescription="@string/A_Building"
+                android:onClick="onClick"
+                android:padding="20dp"
+                app:buildingColor="#7B7A7D"
+                app:buildingName="@string/A_Building"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.616"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="50" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/FC_building"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="356dp"
+                android:contentDescription="@string/FC_Building"
+                android:onClick="onClick"
+                android:padding="20dp"
+                app:buildingColor="#7B7A7D"
+                app:buildingName="@string/FC_Building"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.327"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="40" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/FB_building"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="380dp"
+                android:contentDescription="@string/FB_Building"
+                android:onClick="onClick"
+                android:padding="20dp"
+                app:buildingColor="#7B7A7D"
+                app:buildingName="@string/FB_Building"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.256"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="40" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/FS_building"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="348dp"
+                android:contentDescription="@string/FS_Building"
+                android:onClick="onClick"
+                android:padding="25dp"
+                app:buildingColor="#7B7A7D"
+                app:buildingName="@string/FS_Building"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.135"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="30" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/Lot4_building"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="408dp"
+                android:contentDescription="@string/Lot4"
+                android:onClick="onClick"
+                android:padding="20dp"
+                app:buildingColor="#FFE800"
+                app:buildingName="@string/Lot4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.138"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="30" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/Lot3"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="348dp"
+                android:contentDescription="@string/Lot3"
+                android:onClick="onClick"
+                android:padding="40dp"
+                app:buildingColor="#FFE800"
+                app:buildingName="@string/Lot3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="30" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/W_building"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="232dp"
+                android:contentDescription="@string/W_Building"
+                android:onClick="onClick"
+                android:padding="40dp"
+                app:buildingColor="#7B7A7D"
+                app:buildingName="@string/W_Building"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.107"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="30" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/Bookstore_building"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="144dp"
+                android:contentDescription="@string/Bookstore"
+                android:onClick="onClick"
+                android:padding="20dp"
+                app:buildingColor="#7B7A7D"
+                app:buildingName="@string/Bookstore"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.101"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="30" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/Aquatic"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="268dp"
+                android:contentDescription="@string/Aquatic"
+                android:onClick="onClick"
+                android:padding="25dp"
+                app:buildingColor="#6BD4F3"
+                app:buildingName="@string/Aquatic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.236"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="30" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/Z_Building"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="200dp"
+                android:contentDescription="@string/Z_Building"
+                android:onClick="onClick"
+                android:padding="20dp"
+                app:buildingColor="#7B7A7D"
+                app:buildingName="@string/Z_Building"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.247"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="40" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/G_Building"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="88dp"
+                android:contentDescription="@string/G_Building"
+                android:onClick="onClick"
+                android:padding="20dp"
+                app:buildingColor="#7B7A7D"
+                app:buildingName="@string/G_Building"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.264"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="40" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline2"
@@ -220,6 +426,81 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_begin="20dp" />
 
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/Lot1"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:contentDescription="@string/Lot1"
+                android:onClick="onClick"
+                android:padding="50dp"
+                app:buildingColor="#FFE800"
+                app:buildingName="@string/Lot1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="40" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/Garden"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:contentDescription="@string/Garden"
+                android:onClick="onClick"
+                android:padding="50dp"
+                app:buildingColor="#ACD55A "
+                app:buildingName="@string/Garden"
+                app:layout_constraintBottom_toTopOf="@+id/c_building"
+                app:layout_constraintEnd_toStartOf="@+id/E_building"
+                app:layout_constraintStart_toEndOf="@+id/D_building"
+                app:layout_constraintTop_toTopOf="@+id/Mirror_Pool"
+                app:textColor="#000000"
+                app:textSize="40" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/Mirror_Pool"
+                android:layout_width="91dp"
+                android:layout_height="65dp"
+                android:contentDescription="@string/Mirror_Pool"
+                android:onClick="onClick"
+                android:padding="35dp"
+                app:buildingColor="#6BD4F3"
+                app:buildingName="@string/Mirror_Pool"
+                app:layout_constraintBottom_toTopOf="@+id/c_building"
+                app:layout_constraintEnd_toStartOf="@+id/E_building"
+                app:layout_constraintStart_toEndOf="@+id/D_building"
+                app:textColor="#000000"
+                app:textSize="40" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/CC_Building"
+                android:layout_width="96dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/CC_Building"
+                android:onClick="onClick"
+                android:padding="20dp"
+                app:buildingColor="#7B7A7D"
+                app:buildingName="@string/CC_Building"
+                app:layout_constraintStart_toEndOf="@+id/Lot1"
+                app:layout_constraintTop_toBottomOf="@+id/L_building"
+                app:textColor="#000000"
+                app:textSize="40" />
+
+            <com.example.cs003b_finalproject.BuildingView
+                android:id="@+id/L_building"
+                android:layout_width="160dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/L_Building"
+                android:onClick="onClick"
+                android:padding="20dp"
+                app:buildingColor="#7B7A7D"
+                app:buildingName="@string/L_Building"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.203"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textColor="#000000"
+                app:textSize="30" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </HorizontalScrollView>
 
