@@ -1,11 +1,11 @@
 package com.example.cs003b_finalproject;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cs003b_finalproject.utils.Dijkstra;
@@ -21,15 +21,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private BuildingView startBuilding;
     private BuildingView destinationBuilding;
     private boolean isSelectingBuilding;
-    private Button calculateButton;
+    private TextView startBuildingTxt;
+    private TextView destinationBuildingTxt;
     private ArrayList<Integer> buildingIDs;
+    private LinearLayout buildingList;
 
+    /**
+     * Generic onClick method. In this activity, it handles Views which are not BuildingViews.
+     * @param v The view that was clicked.
+     */
     @Override
     public void onClick(View v)
     {
         if (v instanceof BuildingView)
         {
-            Toast.makeText(this, "Building clicked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Not a building", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -45,39 +51,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
 
-        this.calculateButton = findViewById(R.id.calculateShortestPathBtn);
-        this.calculateButton.setOnClickListener(this::onCalculateBtnClick);
-
+        this.buildingList = findViewById(R.id.buildingListContainer);
+        this.startBuildingTxt = findViewById(R.id.selectedSourceTxt);
+        this.destinationBuildingTxt = findViewById(R.id.selectedDestinationTxt);
         this.isSelectingBuilding = true;
         this.startBuilding = null;
         this.destinationBuilding = null;
     }
 
+    @SuppressLint("SetTextI18n")
     public void onBuildingClick(View v)
     {
         if (this.isSelectingBuilding)
         {
             this.startBuilding = (BuildingView) v;
             this.isSelectingBuilding = false;
+            this.startBuildingTxt.setText("Start: " + this.startBuilding.getName());
         }
         else
         {
             this.destinationBuilding = (BuildingView) v;
             this.isSelectingBuilding = true;
+            this.destinationBuildingTxt.setText("Destination: " + this.destinationBuilding.getName());
         }
     }
 
+    /**
+     * Starts the calculation process
+     * @param v the View object that invoked this method
+     */
     public void onCalculateBtnClick(View v)
     {
         GraphPCC pcc = GraphPCC.getInstance();
         if (this.startBuilding != null && this.destinationBuilding != null)
         {
             this.buildingIDs = pcc.getMinPathTo(this.startBuilding.getName(), this.destinationBuilding.getName());
+            this.buildingList.removeAllViews();
         }
         ArrayList<Vertex> buildings = pcc.getVertexes();
         for (int i : this.buildingIDs)
         {
-            System.out.println(buildings.get(i).getName());
+            TextView buildingEntry = new TextView(this);
+            buildingEntry.setText(buildings.get(i).getName());
+            this.buildingList.addView(buildingEntry);
         }
     }
 }

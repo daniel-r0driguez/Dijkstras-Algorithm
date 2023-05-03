@@ -3,6 +3,7 @@
     <string name="CalculateShortestPath">Calculate Shortest Path</string>
     <string name="SelectedSource">Selected Source: </string>
     <string name="SelectedDestination">Selected Destination: </string>
+    <string name="BuildingListDescription">Traverse these buildings (in order) —></string>
 
     <string name="CC_Building">CC Building</string>
     <string name="L_Building">L Building</string>
@@ -35,10 +36,7 @@
     <string name="O_Building">O Building</string>
     <string name="FS_Building">FS Building</string>
     <string name="FB_Building">FB Building</string>
-    <string name="FC_Building">FC </string>
+    <string name="FC_Building">FC Building</string>
     <string name="GM_Building">GM Building</string>
-    <string name="A_Building">A </string>
-    <string-array name="entries">
-        <item name="Hello"/>
-    </string-array>
+    <string name="A_Building">A Building</string>
 </resources>
